@@ -14,7 +14,7 @@ Interneten tudja magát regisztrálni egy felhasználó,kitudja választani mily
 # Fodrász időpontfoglaló rendszer – Projekt specifikáció
 
 ## Projekt neve
-Időpont Foglalás
+Időpont Foglalás.
 
 ## Csapat tagjai DD
 - Döbrössy Bálint 
