@@ -1,137 +1,229 @@
--- =====================================================
--- Fodrász szalon időpontfoglaló rendszer
--- Vizsgaremek – javított adatbázis séma
--- MariaDB 10.4+
--- =====================================================
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-SET NAMES utf8mb4;
-SET CHARACTER SET utf8mb4;
 
--- -----------------------------------------------------
--- Adatbázis
--- -----------------------------------------------------
-CREATE DATABASE IF NOT EXISTS `fodrasz`
-  DEFAULT CHARACTER SET utf8mb4
-  COLLATE utf8mb4_general_ci;
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
-USE `fodrasz`;
+--
+-- Adatbázis: `fodrasz`
+--
 
--- -----------------------------------------------------
--- USERS
--- -----------------------------------------------------
-CREATE TABLE `users` (
-  `user_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(120) NOT NULL,
-  `email` VARCHAR(255) NOT NULL,
-  `phone` VARCHAR(40) DEFAULT NULL,
-  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+-- --------------------------------------------------------
 
-  PRIMARY KEY (`user_id`),
-  UNIQUE KEY `ux_users_email` (`email`)
-) ENGINE=InnoDB;
+--
+-- Tábla szerkezet ehhez a táblához `appointments`
+--
 
--- -----------------------------------------------------
--- STYLISTS
--- -----------------------------------------------------
-CREATE TABLE `stylists` (
-  `stylist_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(120) NOT NULL,
-  `specialization` VARCHAR(120) DEFAULT NULL,
-  `email` VARCHAR(255) DEFAULT NULL,
-  `phone` VARCHAR(40) DEFAULT NULL,
-
-  PRIMARY KEY (`stylist_id`),
-  UNIQUE KEY `ux_stylists_email` (`email`)
-) ENGINE=InnoDB;
-
--- -----------------------------------------------------
--- SERVICES
--- -----------------------------------------------------
-CREATE TABLE `services` (
-  `service_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(120) NOT NULL,
-  `duration_minutes` INT NOT NULL,
-  `price` DECIMAL(10,2) NOT NULL,
-
-  PRIMARY KEY (`service_id`),
-  CHECK (`duration_minutes` > 0),
-  CHECK (`price` >= 0)
-) ENGINE=InnoDB;
-
--- -----------------------------------------------------
--- TIMESLOTS
--- -----------------------------------------------------
-CREATE TABLE `timeslots` (
-  `slot_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `stylist_id` BIGINT UNSIGNED NOT NULL,
-  `slot_date` DATE NOT NULL,
-  `start_time` TIME NOT NULL,
-  `end_time` TIME NOT NULL,
-  `is_available` TINYINT(1) NOT NULL DEFAULT 1,
-
-  PRIMARY KEY (`slot_id`),
-  UNIQUE KEY `ux_timeslots_stylist_start`
-    (`stylist_id`, `slot_date`, `start_time`),
-  KEY `idx_timeslots_stylist_date`
-    (`stylist_id`, `slot_date`),
-
-  CONSTRAINT `fk_timeslots_stylist`
-    FOREIGN KEY (`stylist_id`)
-    REFERENCES `stylists` (`stylist_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
-
-  CHECK (`start_time` < `end_time`)
-) ENGINE=InnoDB;
-
--- -----------------------------------------------------
--- APPOINTMENTS
--- -----------------------------------------------------
 CREATE TABLE `appointments` (
-  `appointment_id` BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` BIGINT UNSIGNED NOT NULL,
-  `stylist_id` BIGINT UNSIGNED NOT NULL,
-  `service_id` BIGINT UNSIGNED NOT NULL,
-  `appointment_date` DATE NOT NULL,
-  `start_time` TIME NOT NULL,
-  `end_time` TIME NOT NULL,
-  `status` ENUM('booked','cancelled','completed')
-    NOT NULL DEFAULT 'booked',
-  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `appointment_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `stylist_id` bigint(20) UNSIGNED NOT NULL,
+  `service_id` bigint(20) UNSIGNED NOT NULL,
+  `appointment_date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `status` enum('booked','cancelled','completed') DEFAULT 'booked',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-  PRIMARY KEY (`appointment_id`),
+-- --------------------------------------------------------
 
-  UNIQUE KEY `ux_appointments_stylist_start`
-    (`stylist_id`, `appointment_date`, `start_time`),
+--
+-- Tábla szerkezet ehhez a táblához `payments`
+--
 
-  KEY `idx_appointments_user_date`
-    (`user_id`, `appointment_date`),
-  KEY `idx_appointments_stylist_date`
-    (`stylist_id`, `appointment_date`),
-  KEY `idx_appointments_status`
-    (`status`),
+CREATE TABLE `payments` (
+  `payment_id` bigint(20) UNSIGNED NOT NULL,
+  `stylist_id` bigint(20) UNSIGNED NOT NULL,
+  `appointment_id` bigint(20) UNSIGNED NOT NULL,
+  `amount` decimal(10,2) NOT NULL,
+  `paid` tinyint(1) DEFAULT 0,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-  CONSTRAINT `fk_appointments_user`
-    FOREIGN KEY (`user_id`)
-    REFERENCES `users` (`user_id`)
-    ON DELETE CASCADE
-    ON UPDATE CASCADE,
+-- --------------------------------------------------------
 
-  CONSTRAINT `fk_appointments_stylist`
-    FOREIGN KEY (`stylist_id`)
-    REFERENCES `stylists` (`stylist_id`)
-    ON UPDATE CASCADE,
+--
+-- Tábla szerkezet ehhez a táblához `services`
+--
 
-  CONSTRAINT `fk_appointments_service`
-    FOREIGN KEY (`service_id`)
-    REFERENCES `services` (`service_id`)
-    ON UPDATE CASCADE,
+CREATE TABLE `services` (
+  `service_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(120) NOT NULL,
+  `duration_minutes` int(11) NOT NULL,
+  `price` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-  CHECK (`start_time` < `end_time`)
-) ENGINE=InnoDB;
+-- --------------------------------------------------------
 
+--
+-- Tábla szerkezet ehhez a táblához `stylists`
+--
+
+CREATE TABLE `stylists` (
+  `stylist_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(120) NOT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `specialization` varchar(120) DEFAULT NULL,
+  `phone` varchar(40) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `timeslots`
+--
+
+CREATE TABLE `timeslots` (
+  `slot_id` bigint(20) UNSIGNED NOT NULL,
+  `stylist_id` bigint(20) UNSIGNED NOT NULL,
+  `slot_date` date NOT NULL,
+  `start_time` time NOT NULL,
+  `end_time` time NOT NULL,
+  `is_available` tinyint(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(120) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password_hash` varchar(255) NOT NULL,
+  `phone` varchar(40) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Indexek a kiírt táblákhoz
+--
+
+--
+-- A tábla indexei `appointments`
+--
+ALTER TABLE `appointments`
+  ADD PRIMARY KEY (`appointment_id`),
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `stylist_id` (`stylist_id`),
+  ADD KEY `service_id` (`service_id`);
+
+--
+-- A tábla indexei `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`payment_id`),
+  ADD KEY `stylist_id` (`stylist_id`),
+  ADD KEY `appointment_id` (`appointment_id`);
+
+--
+-- A tábla indexei `services`
+--
+ALTER TABLE `services`
+  ADD PRIMARY KEY (`service_id`);
+
+--
+-- A tábla indexei `stylists`
+--
+ALTER TABLE `stylists`
+  ADD PRIMARY KEY (`stylist_id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- A tábla indexei `timeslots`
+--
+ALTER TABLE `timeslots`
+  ADD PRIMARY KEY (`slot_id`),
+  ADD KEY `stylist_id` (`stylist_id`);
+
+--
+-- A tábla indexei `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- A kiírt táblák AUTO_INCREMENT értéke
+--
+
+--
+-- AUTO_INCREMENT a táblához `appointments`
+--
+ALTER TABLE `appointments`
+  MODIFY `appointment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `payment_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `services`
+--
+ALTER TABLE `services`
+  MODIFY `service_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `stylists`
+--
+ALTER TABLE `stylists`
+  MODIFY `stylist_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `timeslots`
+--
+ALTER TABLE `timeslots`
+  MODIFY `slot_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT a táblához `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `appointments`
+--
+ALTER TABLE `appointments`
+  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`stylist_id`) REFERENCES `stylists` (`stylist_id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `appointments_ibfk_3` FOREIGN KEY (`service_id`) REFERENCES `services` (`service_id`) ON DELETE CASCADE;
+
+--
+-- Megkötések a táblához `payments`
+--
+ALTER TABLE `payments`
+  ADD CONSTRAINT `payments_ibfk_1` FOREIGN KEY (`stylist_id`) REFERENCES `stylists` (`stylist_id`),
+  ADD CONSTRAINT `payments_ibfk_2` FOREIGN KEY (`appointment_id`) REFERENCES `appointments` (`appointment_id`);
+
+--
+-- Megkötések a táblához `timeslots`
+--
+ALTER TABLE `timeslots`
+  ADD CONSTRAINT `timeslots_ibfk_1` FOREIGN KEY (`stylist_id`) REFERENCES `stylists` (`stylist_id`) ON DELETE CASCADE;
 COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
