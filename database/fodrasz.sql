@@ -2,7 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
-
+-- Gép: 127.0.0.1
+-- Létrehozás ideje: 2026. Jan 28. 21:39
+-- Kiszolgáló verziója: 10.4.32-MariaDB
+-- PHP verzió: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -64,6 +67,17 @@ CREATE TABLE `services` (
   `price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- A tábla adatainak kiíratása `services`
+--
+
+INSERT INTO `services` (`service_id`, `name`, `duration_minutes`, `price`) VALUES
+(1, 'Hajvágás', 30, 4500.00),
+(2, 'Festés', 90, 18000.00),
+(3, 'Férfi hajvágás', 30, 4000.00),
+(4, 'Borotválás', 20, 3000.00),
+(5, 'Esküvői frizura', 120, 30000.00);
+
 -- --------------------------------------------------------
 
 --
@@ -80,6 +94,17 @@ CREATE TABLE `stylists` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- A tábla adatainak kiíratása `stylists`
+--
+
+INSERT INTO `stylists` (`stylist_id`, `name`, `email`, `password_hash`, `specialization`, `phone`, `created_at`) VALUES
+(1, 'Kiss Anna', 'anna@szalon.hu', '', 'Női hajvágás', '06301234567', '2026-01-28 19:59:16'),
+(2, 'Nagy Péter', 'peter@szalon.hu', '', 'Férfi hajvágás', '06307654321', '2026-01-28 19:59:16'),
+(3, 'Szabó Júlia', 'julia@szalon.hu', '', 'Festés', '06201239876', '2026-01-28 19:59:16'),
+(4, 'Tóth Bence', '06701234598', '', 'Borbély', '06701234598', '2026-01-28 19:59:16'),
+(5, 'Varga Eszter', 'eszter@szalon.hu', '', 'Esküvői frizura', '06301112233', '2026-01-28 19:59:16');
+
 -- --------------------------------------------------------
 
 --
@@ -95,6 +120,17 @@ CREATE TABLE `timeslots` (
   `is_available` tinyint(1) DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- A tábla adatainak kiíratása `timeslots`
+--
+
+INSERT INTO `timeslots` (`slot_id`, `stylist_id`, `slot_date`, `start_time`, `end_time`, `is_available`) VALUES
+(1, 1, '2026-02-01', '09:00:00', '17:00:00', 1),
+(2, 2, '2026-02-01', '10:00:00', '18:00:00', 1),
+(3, 3, '2026-02-01', '08:00:00', '16:00:00', 1),
+(4, 4, '2026-02-01', '11:00:00', '19:00:00', 1),
+(5, 5, '2026-02-01', '09:00:00', '15:00:00', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -109,6 +145,13 @@ CREATE TABLE `users` (
   `phone` varchar(40) DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- A tábla adatainak kiíratása `users`
+--
+
+INSERT INTO `users` (`user_id`, `name`, `email`, `password_hash`, `phone`, `created_at`) VALUES
+(1, 'Teszt Judit', 'judit@gmail.com', '', '06205556666', '2026-01-28 20:00:36');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -178,25 +221,25 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT a táblához `services`
 --
 ALTER TABLE `services`
-  MODIFY `service_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `service_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `stylists`
 --
 ALTER TABLE `stylists`
-  MODIFY `stylist_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `stylist_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `timeslots`
 --
 ALTER TABLE `timeslots`
-  MODIFY `slot_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `slot_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT a táblához `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Megkötések a kiírt táblákhoz
