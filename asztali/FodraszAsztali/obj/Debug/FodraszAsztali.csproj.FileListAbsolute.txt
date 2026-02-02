@@ -1,0 +1,11 @@
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\bin\Debug\FodraszAsztali.exe.config
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\bin\Debug\FodraszAsztali.exe
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\bin\Debug\FodraszAsztali.pdb
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.csproj.AssemblyReference.cache
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.Form1.resources
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.Properties.Resources.resources
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.csproj.GenerateResource.cache
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.csproj.CoreCompileInputs.cache
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.exe
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.pdb
+C:\Users\dobro\OneDrive\Dokumentumok\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.AdminMainForm.resources

@@ -16,5 +16,27 @@ namespace FodraszAsztali
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "admin@szalon.hu" &&
+                txtPassword.Text == "admin")
+            {
+                AdminMainForm main = new AdminMainForm();
+                main.Show();
+                this.Hide();
+            }
+            else
+            {
+                lblError.Text = "Hibás email vagy jelszó";
+                lblError.Visible = true;
+            }
+        }
+
     }
 }
