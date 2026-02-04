@@ -25,7 +25,7 @@ namespace FodraszAsztali
         private void btnStylists_Click(object sender, EventArgs e)
         {
             lblHeader.Text = "Fodrászok";
-            // panelContent.Clear() később
+            
         }
 
         private void btnAppointments_Click(object sender, EventArgs e)
