@@ -62,13 +62,15 @@ Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) dia
 
 <img width="1536" height="1024" alt="erdia" src="https://github.com/user-attachments/assets/fab94d5b-8689-40e0-8b0a-40adabd638f1" />
 
-##Végpontok
+## Elérhető végpontok
 
-Funkció	Végpont
-Fodrászok	GET /stylists
-Szolgáltatások	GET /services
-Időpontok	GET /appointments
-Admin login	POST /admin/login
+| Művelet | HTTP | URL |
+|------|------|-----|
+| Összes adat | GET | /diak |
+| Egy adat | GET | /diak/{id} |
+| Új adat | POST | /diak |
+| Módosítás | PUT | /diak/{id} |
+| Törlés | DELETE | /diak/{id} |
 
 
 ## Normalizálás
