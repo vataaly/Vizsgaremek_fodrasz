@@ -16,7 +16,7 @@ Interneten tudja magát regisztrálni egy felhasználó,kitudja választani mily
 ## Projekt neve
 Időpont Foglalás.
 
-## Csapat tagjai DD
+## Csapat tagjai 
 - Döbrössy Bálint 
 - Szüllő Zsolt 
 - Vatali Zsolt 
@@ -62,6 +62,13 @@ Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) dia
 
 <img width="1536" height="1024" alt="erdia" src="https://github.com/user-attachments/assets/fab94d5b-8689-40e0-8b0a-40adabd638f1" />
 
+##Végpontok
+
+Funkció	Végpont
+Fodrászok	GET /stylists
+Szolgáltatások	GET /services
+Időpontok	GET /appointments
+Admin login	POST /admin/login
 
 
 ## Normalizálás
