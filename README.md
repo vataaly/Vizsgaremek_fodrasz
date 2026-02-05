@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Időpont foglalás
 
 ## Készítők
@@ -16,7 +16,7 @@ Interneten tudja magát regisztrálni egy felhasználó,kitudja választani mily
 ## Projekt neve
 Időpont Foglalás.
 
-## Csapat tagjai DD
+## Csapat tagjai 
 - Döbrössy Bálint 
 - Szüllő Zsolt 
 - Vatali Zsolt 
@@ -56,6 +56,22 @@ hatékonyan kezelhetik a foglalásokat.
 - Stylists 1:N Appointments
 - Services 1:N Appointments
 - Stylists 1:N TimeSlots
+## ER-diagram
+
+Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) diagramját mutatja.
+
+<img width="1536" height="1024" alt="erdia" src="https://github.com/user-attachments/assets/fab94d5b-8689-40e0-8b0a-40adabd638f1" />
+
+## Elérhető végpontok
+
+| Művelet | HTTP | URL |
+|------|------|-----|
+| Összes adat | GET | /diak |
+| Egy adat | GET | /diak/{id} |
+| Új adat | POST | /diak |
+| Módosítás | PUT | /diak/{id} |
+| Törlés | DELETE | /diak/{id} |
+
 
 ## Normalizálás
 Az adatbázis 3. normálformának megfelelően lett kialakítva.
