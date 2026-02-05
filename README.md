@@ -56,6 +56,12 @@ hatékonyan kezelhetik a foglalásokat.
 - Stylists 1:N Appointments
 - Services 1:N Appointments
 - Stylists 1:N TimeSlots
+## ER-diagram
+
+Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) diagramját mutatja.
+
+![ER Diagram](A_diagram_of_a_hair_salon_booking_database_in_Enti.png)
+
 
 ## Normalizálás
 Az adatbázis 3. normálformának megfelelően lett kialakítva.
