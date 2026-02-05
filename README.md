@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Időpont foglalás
 
 ## Készítők
