@@ -60,7 +60,8 @@ hatékonyan kezelhetik a foglalásokat.
 
 Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) diagramját mutatja.
 
-![ER Diagram](A_diagram_of_a_hair_salon_booking_database_in_Enti.png)
+<img width="1536" height="1024" alt="erdia" src="https://github.com/user-attachments/assets/fab94d5b-8689-40e0-8b0a-40adabd638f1" />
+
 
 
 ## Normalizálás
