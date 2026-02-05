@@ -1,0 +1,90 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobbal857\\onedrive - bgaszc logisztikai \u00E9s kereskedelmi technikum \u00E9s szakiskola\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobbal857\\onedrive - bgaszc logisztikai \u00E9s kereskedelmi technikum \u00E9s szakiskola\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobbal857\\onedrive - bgaszc logisztikai \u00E9s kereskedelmi technikum \u00E9s szakiskola\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobbal857\\onedrive - bgaszc logisztikai \u00E9s kereskedelmi technikum \u00E9s szakiskola\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AdminMainForm.cs",
+              "DocumentMoniker": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
+              "RelativeDocumentMoniker": "AdminMainForm.cs",
+              "ToolTip": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
+              "RelativeToolTip": "AdminMainForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T09:09:39.371Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T09:07:36.884Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs [Design]",
+              "RelativeToolTip": "Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T09:07:15.535Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminMainForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
+              "RelativeDocumentMoniker": "AdminMainForm.cs",
+              "ToolTip": "C:\\Users\\dobbal857\\OneDrive - BGaSzC Logisztikai \u00E9s Kereskedelmi Technikum \u00E9s Szakiskola\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs [Design]",
+              "RelativeToolTip": "AdminMainForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-04T09:07:14.051Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
