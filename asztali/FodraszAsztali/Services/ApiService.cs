@@ -11,7 +11,7 @@ namespace FodraszAsztali.Services
     public static class ApiService
     {
         private static readonly string BASE_URL =
-            "https://retoolapi.dev/xNFNpH/diak";
+            "";
 
         public static async Task<List<Diak>> GetDiakokAsync()
         {
