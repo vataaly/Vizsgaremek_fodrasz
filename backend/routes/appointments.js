@@ -7,7 +7,7 @@ import { db } from "../db.js";
 const router = express.Router();
  
 router.post("/", async (req, res) => {
-
+console.log("Received appointment request with body:", req.body);
   try {
 
     const {
@@ -68,7 +68,7 @@ router.post("/", async (req, res) => {
 
       `
 
-      SELECT id FROM appointments
+      SELECT * FROM appointments
 
       WHERE stylist_id = ?
 
@@ -119,16 +119,33 @@ router.post("/", async (req, res) => {
     }
  
     /* ===== INSERT ===== */
+    console.log("Inserting appointment with data:", {
+
+      user_id,
+
+      stylist_id,
+
+      service_id,
+
+      appointment_date,
+
+      start_time,
+
+      end_time,
+
+    });
 
     await db.query(
 
+      // INSERT INTO `appointments` 
+      // (`appointment_id`, `user_id`, `stylist_id`, `service_id`, `appointment_date`, `start_time`, `end_time`, `status` ) VALUES (NULL, '1', '1', '2', '2026-02-18', '12:00', '13:00', 'booked');
       `
 
       INSERT INTO appointments
 
-      (user_id, stylist_id, service_id, appointment_date, start_time, end_time)
+      (appointment_id, user_id, stylist_id, service_id, appointment_date, start_time, end_time)
 
-      VALUES (?, ?, ?, ?, ?, ?)
+      VALUES (NULL,?, ?, ?, ?, ?, ?)
 
       `,
 

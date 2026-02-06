@@ -1,5 +1,5 @@
 import { useState } from "react";
- 
+
 export default function Home() {
 
   const [form, setForm] = useState({
@@ -17,11 +17,11 @@ export default function Home() {
     end_time: "",
 
   });
- 
+
   const [status, setStatus] = useState({ type: "", message: "" });
 
   const [loading, setLoading] = useState(false);
- 
+
   const onChange = (e) => {
 
     const { name, value } = e.target;
@@ -29,7 +29,7 @@ export default function Home() {
     setForm((p) => ({ ...p, [name]: value }));
 
   };
- 
+
   const onSubmit = async (e) => {
 
     e.preventDefault();
@@ -37,9 +37,8 @@ export default function Home() {
     setStatus({ type: "", message: "" });
 
     setLoading(true);
- 
-    try {
 
+    try {
       const res = await fetch("http://localhost:3000/api/appointments", {
 
         method: "POST",
@@ -63,17 +62,17 @@ export default function Home() {
         }),
 
       });
- 
+
       const data = await res.json().catch(() => ({}));
- 
+
       if (!res.ok) {
 
         throw new Error(data?.message || "Hiba történt a foglalásnál");
 
       }
- 
+
       setStatus({ type: "success", message: data?.message || "Sikeres foglalás!" });
- 
+
       // opcionális: ürítés
 
       setForm((p) => ({
@@ -99,18 +98,18 @@ export default function Home() {
     }
 
   };
- 
+
   return (
-<div className="container mt-5">
+    <div className="container mt-5">
 
       {/* Meglévő welcome rész */}
-<div className="text-center">
-<h1 className="mb-4">Üdvözlünk a Fodrász Szalonban!</h1>
-<p className="lead">
+      <div className="text-center">
+        <h1 className="mb-4">Üdvözlünk a Fodrász Szalonban!</h1>
+        <p className="lead">
 
           Válaszd ki a szolgáltatást és foglalj időpontot online gyorsan és egyszerűen.
-</p>
-<img
+        </p>
+        <img
 
           src="https://images.unsplash.com/photo-1600185363170-8c005109d1db?auto=format&fit=crop&w=800&q=80"
 
@@ -119,19 +118,19 @@ export default function Home() {
           className="img-fluid rounded mt-4 shadow"
 
         />
-</div>
- 
+      </div>
+
       {/* ÚJ: Foglalás */}
-<div className="row justify-content-center mt-5">
-<div className="col-12 col-md-8 col-lg-6">
-<div className="card shadow">
-<div className="card-body">
-<h3 className="card-title mb-3">Időpont foglalás</h3>
- 
+      <div className="row justify-content-center mt-5">
+        <div className="col-12 col-md-8 col-lg-6">
+          <div className="card shadow">
+            <div className="card-body">
+              <h3 className="card-title mb-3">Időpont foglalás</h3>
+
               <form onSubmit={onSubmit} className="d-grid gap-3">
-<div>
-<label className="form-label">User ID</label>
-<input
+                <div>
+                  <label className="form-label">User ID</label>
+                  <input
 
                     className="form-control"
 
@@ -142,11 +141,11 @@ export default function Home() {
                     onChange={onChange}
 
                   />
-</div>
- 
+                </div>
+
                 <div>
-<label className="form-label">Stylist ID</label>
-<input
+                  <label className="form-label">Stylist ID</label>
+                  <input
 
                     className="form-control"
 
@@ -157,11 +156,11 @@ export default function Home() {
                     onChange={onChange}
 
                   />
-</div>
- 
+                </div>
+
                 <div>
-<label className="form-label">Service ID</label>
-<input
+                  <label className="form-label">Service ID</label>
+                  <input
 
                     className="form-control"
 
@@ -172,11 +171,11 @@ export default function Home() {
                     onChange={onChange}
 
                   />
-</div>
- 
+                </div>
+
                 <div>
-<label className="form-label">Dátum</label>
-<input
+                  <label className="form-label">Dátum</label>
+                  <input
 
                     type="date"
 
@@ -191,12 +190,12 @@ export default function Home() {
                     required
 
                   />
-</div>
- 
+                </div>
+
                 <div className="row g-2">
-<div className="col">
-<label className="form-label">Kezdés</label>
-<input
+                  <div className="col">
+                    <label className="form-label">Kezdés</label>
+                    <input
 
                       type="time"
 
@@ -211,10 +210,10 @@ export default function Home() {
                       required
 
                     />
-</div>
-<div className="col">
-<label className="form-label">Vége</label>
-<input
+                  </div>
+                  <div className="col">
+                    <label className="form-label">Vége</label>
+                    <input
 
                       type="time"
 
@@ -229,35 +228,34 @@ export default function Home() {
                       required
 
                     />
-</div>
-</div>
- 
+                  </div>
+                </div>
+
                 <button className="btn btn-primary" type="submit" disabled={loading}>
 
                   {loading ? "Foglalás..." : "Foglalás elküldése"}
-</button>
-</form>
- 
+                </button>
+              </form>
+
               {status.message && (
-<div className={`alert mt-3 ${status.type === "success" ? "alert-success" : "alert-danger"}`}>
+                <div className={`alert mt-3 ${status.type === "success" ? "alert-success" : "alert-danger"}`}>
 
                   {status.message}
-</div>
+                </div>
 
               )}
- 
+
               <small className="text-muted d-block mt-2">
 
                 (Később ezt lecseréljük dropdownokra: stylist lista, szolgáltatás lista, stb.)
-</small>
-</div>
-</div>
-</div>
-</div>
-</div>
+              </small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
   );
 
 }
 
- 
