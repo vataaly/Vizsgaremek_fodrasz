@@ -64,13 +64,13 @@ Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) dia
 
 ## Elérhető végpontok
 
-| Művelet | HTTP | URL |
-|------|------|-----|
-| Összes adat | GET | /diak |
-| Egy adat | GET | /diak/{id} |
-| Új adat | POST | /diak |
-| Módosítás | PUT | /diak/{id} |
-| Törlés | DELETE | /diak/{id} |
+| Művelet     | HTTP   | URL         |
+| ----------- | ------ | ----------- |
+| Összes adat | GET    | /users      |
+| Egy adat    | GET    | /users/{id} |
+| Új adat     | POST   | /users      |
+| Módosítás   | PUT    | /users/{id} |
+| Törlés      | DELETE | /users/{id} |
 
 
 ## Normalizálás
