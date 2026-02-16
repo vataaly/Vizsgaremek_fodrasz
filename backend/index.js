@@ -5,6 +5,7 @@ import dotenv from "dotenv";
 import usersRoutes from "./routes/users.js";
 import stylistsRoutes from "./routes/stylists.js";
 import appointmentsRoutes from "./routes/appointments.js";
+import servicesRoutes from "./routes/services.js";
 
 dotenv.config();
 
@@ -16,6 +17,7 @@ app.use(express.json());
 app.use("/api/users", usersRoutes);
 app.use("/api/stylists", stylistsRoutes);
 app.use("/api/appointments", appointmentsRoutes);
+app.use("/api/services", servicesRoutes);
 
 app.get("/", (req, res) => {
   res.send("Backend fut 🚀");
