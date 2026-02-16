@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 28. 21:39
+-- Gép: 127.0.0.1:3307
+-- Létrehozás ideje: 2026. Feb 16. 11:49
 -- Kiszolgáló verziója: 10.4.32-MariaDB
--- PHP verzió: 8.0.30
+-- PHP verzió: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -151,7 +151,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password_hash`, `phone`, `created_at`) VALUES
-(1, 'Teszt Judit', 'judit@gmail.com', '', '06205556666', '2026-01-28 20:00:36');
+(2, 'vzsolt05ig@gmail.com', 'vzsolt05ig@gmail.com', '$2b$10$dEEY4syLGfsjrcsvooNi4OMQ7m.pzaGs4PxPXEMM8qY5SkuR81L3a', NULL, '2026-02-16 10:44:08'),
+(3, 'szulloratyirambo@gmail.com', 'szulloratyirambo@gmail.com', '$2b$10$jvehwUw8gAhLwnXTDKjRgOOoYt9s3LCHSoWExLRysi.puiawso1Rq', NULL, '2026-02-16 10:45:20');
 
 --
 -- Indexek a kiírt táblákhoz
@@ -199,7 +200,7 @@ ALTER TABLE `timeslots`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`user_id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD UNIQUE KEY `uniq_users_email` (`email`);
 
 --
 -- A kiírt táblák AUTO_INCREMENT értéke
@@ -239,7 +240,7 @@ ALTER TABLE `timeslots`
 -- AUTO_INCREMENT a táblához `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Megkötések a kiírt táblákhoz
