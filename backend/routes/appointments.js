@@ -42,6 +42,32 @@ router.post("/", async (req, res) => {
     if (conflicts.length > 0) {
       return res.status(409).json({ message: "Ez az időpont már foglalt ennél a fodrásznál" });
     }
+    /* ===== 4. ÖSSZES FOGLALÁS LEKÉRÉSE (ADMIN) ===== */
+router.get("/", async (req, res) => {
+  try {
+    const [rows] = await db.query(`
+      SELECT 
+        a.appointment_id,
+        a.appointment_date,
+        a.start_time,
+        a.end_time,
+        u.name AS user_name,
+        s.name AS stylist_name,
+        srv.name AS service_name,
+        srv.price AS service_price
+      FROM appointments a
+      JOIN users u ON a.user_id = u.user_id
+      JOIN stylists s ON a.stylist_id = s.stylist_id
+      JOIN services srv ON a.service_id = srv.service_id
+      ORDER BY a.appointment_date DESC, a.start_time DESC
+    `);
+ 
+    res.json(rows);
+  } catch (err) {
+    console.error("Hiba az admin lekérésnél:", err);
+    res.status(500).json({ message: "Szerver hiba történt" });
+  }
+});
 
     /* Beszúrás */
     await db.query(

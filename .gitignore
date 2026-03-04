@@ -1,1 +1,13 @@
-node_modules
+# Node / React
+node_modules/
+.env
+
+# Visual Studio
+.vs/
+bin/
+obj/
+
+# User files
+*.user
+*.suo
+*.cache
