@@ -42,9 +42,11 @@ A fájl letöltése Zip Fájlként vagy CMD-Be Git clone al bemásolni a tetsző
 A konzolba ezt kell bemásolni:
 
 
+```npm
 npm i
 
 npm start
+```
 
 ## Frontend inditás
 <img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/a1fd3e80-78e9-4446-a3cc-97d55cb61bef" />
@@ -52,12 +54,12 @@ npm start
 
 A konzolba ezt kell bemásolni:
 
-
+```npm
 npm i 
 
 
 npm run dev
-
+```
 
 ## Sql inditás
 <img width="671" height="428" alt="image" src="https://github.com/user-attachments/assets/36f3da65-b2ce-4b89-8d31-5acf00b3ba78" />
