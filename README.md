@@ -26,6 +26,8 @@ Időpont Foglalás.
 <img width="1913" height="1062" alt="image" src="https://github.com/user-attachments/assets/eb905b0c-a9fa-423b-be93-e29390eafae2" />
 
 A konzolba ezt kell bemásolni:
+
+
 npm i
 
 npm start
@@ -35,6 +37,8 @@ npm start
 
 
 A konzolba ezt kell bemásolni:
+
+
 npm i 
 
 
