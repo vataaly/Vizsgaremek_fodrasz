@@ -28,6 +28,11 @@ A fájl letöltése Zip Fájlként vagy CMD-Be Git clone al bemásolni a tetsző
 <img width="1172" height="716" alt="image" src="https://github.com/user-attachments/assets/f1317f47-f312-49ce-996c-27ab2a09f2ce" />
 
 
+```bash
+git clone https://github.com/vataaly/Vizsgaremek_fodrasz
+```
+
+
 <img width="964" height="504" alt="image" src="https://github.com/user-attachments/assets/4f19a838-6065-4f2f-a64e-b6b1bae6d4f8" />
 
 
@@ -42,9 +47,10 @@ A fájl letöltése Zip Fájlként vagy CMD-Be Git clone al bemásolni a tetsző
 A konzolba ezt kell bemásolni:
 
 
-```npm
+```bash
 npm i
-
+```
+```bash
 npm start
 ```
 
@@ -54,10 +60,10 @@ npm start
 
 A konzolba ezt kell bemásolni:
 
-```npm
+```bash
 npm i 
-
-
+```
+```bash
 npm run dev
 ```
 
