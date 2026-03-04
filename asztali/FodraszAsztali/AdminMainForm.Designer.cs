@@ -78,6 +78,7 @@
             this.btnLogout.TabIndex = 2;
             this.btnLogout.Text = "Kijelentkezés";
             this.btnLogout.UseVisualStyleBackColor = false;
+            this.btnLogout.Click += new System.EventHandler(this.btnLogout_Click);
             // 
             // btnAppointments
             // 
@@ -87,6 +88,7 @@
             this.btnAppointments.TabIndex = 2;
             this.btnAppointments.Text = "Időpontok";
             this.btnAppointments.UseVisualStyleBackColor = true;
+            this.btnAppointments.Click += new System.EventHandler(this.btnAppointments_Click);
             // 
             // lblMenuTitle
             // 
@@ -136,18 +138,15 @@
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContent.Controls.Add(this.btnDeleteStylist);
-            this.panelContent.Controls.Add(this.btnEditStylist);
-            this.panelContent.Controls.Add(this.btnAddStylist);
             this.panelContent.Controls.Add(this.dataGridView1);
             this.panelContent.Location = new System.Drawing.Point(220, 60);
             this.panelContent.Name = "panelContent";
-            this.panelContent.Size = new System.Drawing.Size(980, 640);
+            this.panelContent.Size = new System.Drawing.Size(980, 506);
             this.panelContent.TabIndex = 1;
             // 
             // btnDeleteStylist
             // 
-            this.btnDeleteStylist.Location = new System.Drawing.Point(300, 540);
+            this.btnDeleteStylist.Location = new System.Drawing.Point(572, 600);
             this.btnDeleteStylist.Name = "btnDeleteStylist";
             this.btnDeleteStylist.Size = new System.Drawing.Size(120, 40);
             this.btnDeleteStylist.TabIndex = 1;
@@ -156,7 +155,7 @@
             // 
             // btnEditStylist
             // 
-            this.btnEditStylist.Location = new System.Drawing.Point(160, 540);
+            this.btnEditStylist.Location = new System.Drawing.Point(427, 600);
             this.btnEditStylist.Name = "btnEditStylist";
             this.btnEditStylist.Size = new System.Drawing.Size(120, 40);
             this.btnEditStylist.TabIndex = 1;
@@ -165,7 +164,7 @@
             // 
             // btnAddStylist
             // 
-            this.btnAddStylist.Location = new System.Drawing.Point(20, 540);
+            this.btnAddStylist.Location = new System.Drawing.Point(285, 600);
             this.btnAddStylist.Name = "btnAddStylist";
             this.btnAddStylist.Size = new System.Drawing.Size(120, 40);
             this.btnAddStylist.TabIndex = 1;
@@ -188,8 +187,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.btnDeleteStylist);
             this.Controls.Add(this.panelContent);
+            this.Controls.Add(this.btnEditStylist);
             this.Controls.Add(this.panelHeader_);
+            this.Controls.Add(this.btnAddStylist);
             this.Controls.Add(this.btnStylists);
             this.Controls.Add(this.lblMenuTitle);
             this.Controls.Add(this.panelMenu);

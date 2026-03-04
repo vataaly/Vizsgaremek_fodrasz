@@ -24,6 +24,14 @@ namespace FodraszAsztali.Services
             string json = await response.Content.ReadAsStringAsync();
             return JsonConvert.DeserializeObject<List<Stylist>>(json);
         }
+        public static async Task<List<Appointment>> GetAppointmentsAsync()
+        {
+            var response = await client.GetAsync($"{BASE_URL}/api/appointments");
+            response.EnsureSuccessStatusCode();
+
+            string json = await response.Content.ReadAsStringAsync();
+            return JsonConvert.DeserializeObject<List<Appointment>>(json);
+        }
 
         public static async Task AddStylistAsync(Stylist stylist)
         {

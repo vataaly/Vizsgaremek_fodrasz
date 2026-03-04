@@ -44,12 +44,26 @@ namespace FodraszAsztali
             dgv.DataSource = stylists;
         }
 
-        private void btnAppointments_Click(object sender, EventArgs e)
+        private async void btnAppointments_Click(object sender, EventArgs e)
         {
             lblHeader.Text = "Időpontok";
+
+            panelContent.Controls.Clear();
+
+            DataGridView dgv = new DataGridView
+            {
+                Dock = DockStyle.Fill,
+                ReadOnly = true,
+                AutoGenerateColumns = true
+            };
+
+            panelContent.Controls.Add(dgv);
+
+            var appointments = await ApiService.GetAppointmentsAsync();
+            dgv.DataSource = appointments;
         }
 
-        
+
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
