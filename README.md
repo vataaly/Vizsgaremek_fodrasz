@@ -22,21 +22,73 @@ Időpont Foglalás.
 - Vatali Zsolt 
 
 ## Inditás
+
+A fájl letöltése Zip Fájlként vagy CMD-Be Git clone al bemásolni a tetszőleges mappába
+
+<img width="1172" height="716" alt="image" src="https://github.com/user-attachments/assets/f1317f47-f312-49ce-996c-27ab2a09f2ce" />
+
+
+```bash
+git clone https://github.com/vataaly/Vizsgaremek_fodrasz
+```
+
+
+<img width="964" height="504" alt="image" src="https://github.com/user-attachments/assets/4f19a838-6065-4f2f-a64e-b6b1bae6d4f8" />
+
+
+
+
+
+
+
 ## Backend indítása
 <img width="1913" height="1062" alt="image" src="https://github.com/user-attachments/assets/eb905b0c-a9fa-423b-be93-e29390eafae2" />
+
+A konzolba ezt kell bemásolni:
+
+
+```bash
 npm i
+```
+```bash
 npm start
+```
+
 ## Frontend inditás
 <img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/a1fd3e80-78e9-4446-a3cc-97d55cb61bef" />
+
+
+A konzolba ezt kell bemásolni:
+
+```bash
 npm i 
+```
+```bash
 npm run dev
+```
+
 ## Sql inditás
 <img width="671" height="428" alt="image" src="https://github.com/user-attachments/assets/36f3da65-b2ce-4b89-8d31-5acf00b3ba78" />
+
+
 Ezt a kettőt kell elinditani utána
+
+
+
 <img width="1903" height="1069" alt="image" src="https://github.com/user-attachments/assets/294c2d7a-f65d-43bf-aba6-380747e2bbcf" />
+
+
 Az importátálásra kell kattintani majd bemásolni a fájlt
+
+
 <img width="1324" height="317" alt="image" src="https://github.com/user-attachments/assets/09f8e966-d1ce-4b0d-b995-1f68f8bbb6c2" />
+
+
 <img width="1904" height="1061" alt="image" src="https://github.com/user-attachments/assets/bdcfb222-e461-4d26-b18d-2b443bbe97fa" />
+
+Majd a végén megint az importálásra kattintani az oldal alján
+
+
 
 
 
