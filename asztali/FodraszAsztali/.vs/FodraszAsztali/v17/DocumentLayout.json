@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\dobbal857\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobbal857\\downloads\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|C:\\Users\\dobbal857\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -30,8 +30,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -40,14 +44,10 @@
               "RelativeDocumentMoniker": "Services\\ApiService.cs",
               "ToolTip": "C:\\Users\\dobbal857\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Services\\ApiService.cs",
               "RelativeToolTip": "Services\\ApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-05T12:07:45.908Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
@@ -57,7 +57,7 @@
               "RelativeDocumentMoniker": "AdminMainForm.cs",
               "ToolTip": "C:\\Users\\dobbal857\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
               "RelativeToolTip": "AdminMainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAIwDMAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T09:09:39.371Z",
               "EditorCaption": ""
@@ -70,7 +70,7 @@
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\dobbal857\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-04T09:07:36.884Z"
             },

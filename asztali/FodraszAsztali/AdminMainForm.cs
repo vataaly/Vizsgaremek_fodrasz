@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FodraszAsztali.Models;
+using FodraszAsztali.Services;
 
 namespace FodraszAsztali
 {
@@ -22,10 +24,24 @@ namespace FodraszAsztali
         {
 
         }
-        private void btnStylists_Click(object sender, EventArgs e)
+        private async void btnStylists_Click(object sender, EventArgs e)
         {
-            lblHeader.Text = "Fodrászok";
             
+            lblHeader.Text = "Fodrászok";
+
+            panelContent.Controls.Clear();
+
+            DataGridView dgv = new DataGridView
+            {
+                Dock = DockStyle.Fill,
+                ReadOnly = true,
+                AutoGenerateColumns = true
+            };
+
+            panelContent.Controls.Add(dgv);
+
+            var stylists = await ApiService.GetStylistsAsync();
+            dgv.DataSource = stylists;
         }
 
         private void btnAppointments_Click(object sender, EventArgs e)
@@ -33,15 +49,13 @@ namespace FodraszAsztali
             lblHeader.Text = "Időpontok";
         }
 
-        private void btnServices_Click(object sender, EventArgs e)
-        {
-            lblHeader.Text = "Szolgáltatások";
-        }
+        
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
             Application.Restart();
         }
 
+        
     }
 }

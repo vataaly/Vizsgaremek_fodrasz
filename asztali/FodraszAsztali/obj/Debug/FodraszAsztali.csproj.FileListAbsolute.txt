@@ -4,7 +4,6 @@ C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\bin\Debu
 C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\bin\Debug\Newtonsoft.Json.dll
 C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\bin\Debug\Newtonsoft.Json.xml
 C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.csproj.AssemblyReference.cache
-C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.FodraszokView.resources
 C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.Form1.resources
 C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.AdminMainForm.resources
 C:\Users\dobbal857\Downloads\Vizsgaremek_fodrasz\asztali\FodraszAsztali\obj\Debug\FodraszAsztali.Properties.Resources.resources
