@@ -24,12 +24,17 @@ Időpont Foglalás.
 ## Inditás
 ## Backend indítása
 <img width="1913" height="1062" alt="image" src="https://github.com/user-attachments/assets/eb905b0c-a9fa-423b-be93-e29390eafae2" />
+
+A konzolba ezt kell bemásolni:
 npm i
 
 npm start
 
 ## Frontend inditás
 <img width="1910" height="1080" alt="image" src="https://github.com/user-attachments/assets/a1fd3e80-78e9-4446-a3cc-97d55cb61bef" />
+
+
+A konzolba ezt kell bemásolni:
 npm i 
 
 
@@ -54,6 +59,8 @@ Az importátálásra kell kattintani majd bemásolni a fájlt
 
 
 <img width="1904" height="1061" alt="image" src="https://github.com/user-attachments/assets/bdcfb222-e461-4d26-b18d-2b443bbe97fa" />
+
+Majd a végén megint az importálásra kattintani az oldal alján
 
 
 
