@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE = "http://localhost:3000"; // ha a backend más porton fut, írd át
+const API_BASE = "http://localhost:3000"; 
 
 export default function Register() {
   const [email, setEmail] = useState("");

@@ -12,8 +12,8 @@ export default function Profile() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   
-  // Törléshez szükséges állapotok
-  const [showConfirm, setShowConfirm] = useState(null); // Itt tároljuk a törlendő ID-t
+ 
+  const [showConfirm, setShowConfirm] = useState(null);
 
   const fetchAppointments = () => {
     setLoading(true);
@@ -99,7 +99,7 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* LEMONDÁS MEGERŐSÍTÉSE (Overlay) */}
+      
       {showConfirm && (
         <div className="modal-backdrop show" style={{background: 'rgba(0,0,0,0.5)'}}>
           <div className="modal show d-block" tabIndex="-1">

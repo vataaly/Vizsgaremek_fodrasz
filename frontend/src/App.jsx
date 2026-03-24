@@ -27,7 +27,7 @@ export default function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
 
-        {/* Kötelező jogi oldalak */}
+        
         <Route path="/impresszum" element={<Impresszum />} />
         <Route path="/adatvedelem" element={<Adatvedelem />} />
         <Route path="/cookie" element={<Cookie />} />

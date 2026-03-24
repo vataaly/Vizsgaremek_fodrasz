@@ -14,7 +14,7 @@ export default function Home() {
 
   return (
     <div>
-      {/* Hero Szekció */}
+      
       <div className="bg-dark text-white text-center py-5 mb-5" style={{ 
         backgroundImage: 'linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url("https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=1600&q=80")',
         backgroundSize: 'cover', backgroundPosition: 'center', minHeight: '400px', display: 'flex', alignItems: 'center'
@@ -27,7 +27,7 @@ export default function Home() {
       </div>
 
       <div className="container">
-        {/* Fodrászok szekció */}
+        
         <section className="mb-5">
           <h2 className="text-center mb-4">Mesterfodrászaink</h2>
           <div className="row g-4">
@@ -45,7 +45,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Szolgáltatások szekció */}
+        
         <section className="bg-light p-5 rounded-4 mb-5">
           <h2 className="text-center mb-4">Szolgáltatásaink</h2>
           <div className="row">

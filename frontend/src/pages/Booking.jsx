@@ -15,7 +15,7 @@ export default function Booking() {
     serviceId: "",
     date: "",
     startTime: "",
-    endTime: "", // Ez automatikusan fog frissülni
+    endTime: "", 
   });
 
   const [status, setStatus] = useState({ type: "", message: "" });
@@ -40,31 +40,31 @@ export default function Booking() {
       .catch(() => setStatus({ type: "danger", message: "Hiba az adatok betöltésekor." }));
   }, [navigate]);
 
-  // --- AUTOMATIKUS IDŐSZÁMÍTÁS LOGIKA ---
+  
   useEffect(() => {
     if (formData.serviceId && formData.startTime) {
-      // Megkeressük a kiválasztott szolgáltatást az adatok között
+   
       const selectedService = services.find(s => s.service_id === Number(formData.serviceId));
       
       if (selectedService && selectedService.duration_minutes) {
-        // Idő szétszedése órára és percre
+   
         const [hours, minutes] = formData.startTime.split(':').map(Number);
         
-        // Összes perc kiszámítása + a szolgáltatás hossza
+     
         const totalMinutes = hours * 60 + minutes + selectedService.duration_minutes;
         
-        // Új óra és perc kiszámítása
-        const endHours = Math.floor(totalMinutes / 60) % 24; // %24 ha éjfél utánra nyúlna
+       
+        const endHours = Math.floor(totalMinutes / 60) % 24; 
         const endMinutes = totalMinutes % 60;
         
-        // Formázás HH:mm formátumra
+        
         const formattedEndTime = `${String(endHours).padStart(2, '0')}:${String(endMinutes).padStart(2, '0')}`;
         
         setFormData(prev => ({ ...prev, endTime: formattedEndTime }));
       }
     }
   }, [formData.serviceId, formData.startTime, services]);
-  // --------------------------------------
+ 
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -153,7 +153,7 @@ export default function Booking() {
                         className="form-control form-control-lg bg-light" 
                         name="endTime" 
                         value={formData.endTime} 
-                        readOnly // A felhasználó nem tudja módosítani
+                        readOnly
                         placeholder="--:--" 
                     />
                   </div>

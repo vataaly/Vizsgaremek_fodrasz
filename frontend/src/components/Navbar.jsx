@@ -7,18 +7,18 @@ export default function Navbar() {
 
   const logout = () => {
     localStorage.removeItem("loggedIn");
-    localStorage.removeItem("user"); // Érdemes a felhasználói adatokat is törölni kilépéskor
+    localStorage.removeItem("user"); 
     navigate("/");
   };
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark px-4">
-      {/* Logó / Márkanév */}
+      
       <Link className="navbar-brand" to="/">
         Fodrász Szalon
       </Link>
 
-      {/* Menüpontok konténere */}
+      
       <div className="ms-auto d-flex align-items-center gap-3">
         <Link className="nav-link text-white" to="/">
           Főoldal
@@ -28,7 +28,7 @@ export default function Navbar() {
           Foglalás
         </Link>
 
-        {/* Bejelentkezés/Regisztráció - Csak ha NINCS bejelentkezve */}
+        
         {!loggedIn && (
           <>
             <Link className="nav-link text-white" to="/login">
@@ -40,7 +40,7 @@ export default function Navbar() {
           </>
         )}
 
-        {/* Felhasználói menü - Csak ha BE VAN jelentkezve */}
+        
         {loggedIn && (
           <>
             <span className="text-white">
