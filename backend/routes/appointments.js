@@ -24,7 +24,7 @@ router.post("/", async (req, res) => {
       return res.status(400).json({ message: "A kezdési időnek kisebbnek kell lennie a végidőnél" });
     }
 
-    /* Ütközés ellenőrzés a fodrásznál */
+    /* Ütközés ellenőrzés */
     const [conflicts] = await db.query(
       `
       SELECT * FROM appointments 
@@ -42,32 +42,6 @@ router.post("/", async (req, res) => {
     if (conflicts.length > 0) {
       return res.status(409).json({ message: "Ez az időpont már foglalt ennél a fodrásznál" });
     }
-    /* ===== 4. ÖSSZES FOGLALÁS LEKÉRÉSE (ADMIN) ===== */
-router.get("/", async (req, res) => {
-  try {
-    const [rows] = await db.query(`
-      SELECT 
-        a.appointment_id,
-        a.appointment_date,
-        a.start_time,
-        a.end_time,
-        u.name AS user_name,
-        s.name AS stylist_name,
-        srv.name AS service_name,
-        srv.price AS service_price
-      FROM appointments a
-      JOIN users u ON a.user_id = u.user_id
-      JOIN stylists s ON a.stylist_id = s.stylist_id
-      JOIN services srv ON a.service_id = srv.service_id
-      ORDER BY a.appointment_date DESC, a.start_time DESC
-    `);
- 
-    res.json(rows);
-  } catch (err) {
-    console.error("Hiba az admin lekérésnél:", err);
-    res.status(500).json({ message: "Szerver hiba történt" });
-  }
-});
 
     /* Beszúrás */
     await db.query(
@@ -86,8 +60,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-/* ===== 2. FELHASZNÁLÓ FOGLALÁSAINAK LEKÉRÉSE (GET) ===== */
-/* Itt lekérjük a fodrász nevét, a szolgáltatás nevét és az ÁRAT is */
+/* ===== 2. FELHASZNÁLÓ FOGLALÁSAINAK LEKÉRÉSE ===== */
 router.get("/user/:userId", async (req, res) => {
   try {
     const userId = req.params.userId;
@@ -118,7 +91,7 @@ router.get("/user/:userId", async (req, res) => {
   }
 });
 
-/* ===== 3. FOGLALÁS TÖRLÉSE / LEMONDÁSA (DELETE) ===== */
+/* ===== 3. FOGLALÁS TÖRLÉSE ===== */
 router.delete("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -136,6 +109,33 @@ router.delete("/:id", async (req, res) => {
   } catch (err) {
     console.error("Hiba a törlésnél:", err);
     res.status(500).json({ message: "Szerver hiba történt a törlés során" });
+  }
+});
+
+/* ===== 4. ÖSSZES FOGLALÁS LEKÉRÉSE (ADMIN) ===== */
+router.get("/", async (req, res) => {
+  try {
+    const [rows] = await db.query(`
+      SELECT 
+        a.appointment_id,
+        a.appointment_date,
+        a.start_time,
+        a.end_time,
+        u.name AS user_name,
+        s.name AS stylist_name,
+        srv.name AS service_name,
+        srv.price AS service_price
+      FROM appointments a
+      JOIN users u ON a.user_id = u.user_id
+      JOIN stylists s ON a.stylist_id = s.stylist_id
+      JOIN services srv ON a.service_id = srv.service_id
+      ORDER BY a.appointment_date DESC, a.start_time DESC
+    `);
+
+    res.json(rows);
+  } catch (err) {
+    console.error("Hiba az admin lekérésnél:", err);
+    res.status(500).json({ message: "Szerver hiba történt" });
   }
 });
 
