@@ -38,7 +38,8 @@ namespace FodraszAsztali.Services
             var json = JsonConvert.SerializeObject(stylist);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync($"{BASE_URL}/stylists", content);
+            
+            var response = await client.PostAsync($"{BASE_URL}/api/stylists", content);
             response.EnsureSuccessStatusCode();
         }
 
@@ -47,13 +48,36 @@ namespace FodraszAsztali.Services
             var json = JsonConvert.SerializeObject(stylist);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await client.PutAsync($"{BASE_URL}/stylists/{id}", content);
+            
+            var response = await client.PutAsync($"{BASE_URL}/api/stylists/{id}", content);
             response.EnsureSuccessStatusCode();
         }
 
         public static async Task DeleteStylistAsync(int id)
         {
-            var response = await client.DeleteAsync($"{BASE_URL}/stylists/{id}");
+           
+            var response = await client.DeleteAsync($"{BASE_URL}/api/stylists/{id}");
+            response.EnsureSuccessStatusCode();
+        }
+        public static async Task AddAppointmentAsync(Appointment app)
+        {
+            var json = JsonConvert.SerializeObject(app);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync($"{BASE_URL}/api/appointments", content);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public static async Task UpdateAppointmentAsync(int id, Appointment app)
+        {
+            var json = JsonConvert.SerializeObject(app);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PutAsync($"{BASE_URL}/api/appointments/{id}", content);
+            response.EnsureSuccessStatusCode();
+        }
+
+        public static async Task DeleteAppointmentAsync(int id)
+        {
+            var response = await client.DeleteAsync($"{BASE_URL}/api/appointments/{id}");
             response.EnsureSuccessStatusCode();
         }
     }

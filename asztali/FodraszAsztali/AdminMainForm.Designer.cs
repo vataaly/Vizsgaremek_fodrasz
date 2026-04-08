@@ -37,14 +37,14 @@
             this.lblHeader = new System.Windows.Forms.Label();
             this.panelHeader_ = new System.Windows.Forms.Panel();
             this.panelContent = new System.Windows.Forms.Panel();
+            this.dgv = new System.Windows.Forms.DataGridView();
             this.btnDeleteStylist = new System.Windows.Forms.Button();
-            this.btnEditStylist = new System.Windows.Forms.Button();
-            this.btnAddStylist = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panelHeader_.SuspendLayout();
             this.panelContent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMenu
@@ -138,11 +138,22 @@
             // panelContent
             // 
             this.panelContent.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panelContent.Controls.Add(this.dataGridView1);
+            this.panelContent.Controls.Add(this.dgv);
             this.panelContent.Location = new System.Drawing.Point(220, 60);
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(980, 506);
             this.panelContent.TabIndex = 1;
+            // 
+            // dgv
+            // 
+            this.dgv.AllowUserToAddRows = false;
+            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv.Location = new System.Drawing.Point(3, 6);
+            this.dgv.Name = "dgv";
+            this.dgv.ReadOnly = true;
+            this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgv.Size = new System.Drawing.Size(940, 500);
+            this.dgv.TabIndex = 0;
             // 
             // btnDeleteStylist
             // 
@@ -152,35 +163,27 @@
             this.btnDeleteStylist.TabIndex = 1;
             this.btnDeleteStylist.Text = "Törlés";
             this.btnDeleteStylist.UseVisualStyleBackColor = true;
+            this.btnDeleteStylist.Click += new System.EventHandler(this.btnDeleteStylist_Click);
             // 
-            // btnEditStylist
+            // btnEdit
             // 
-            this.btnEditStylist.Location = new System.Drawing.Point(427, 600);
-            this.btnEditStylist.Name = "btnEditStylist";
-            this.btnEditStylist.Size = new System.Drawing.Size(120, 40);
-            this.btnEditStylist.TabIndex = 1;
-            this.btnEditStylist.Text = "Szerkesztés";
-            this.btnEditStylist.UseVisualStyleBackColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(427, 600);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(120, 40);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.Text = "Szerkesztés";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnAddStylist
+            // btnAdd
             // 
-            this.btnAddStylist.Location = new System.Drawing.Point(285, 600);
-            this.btnAddStylist.Name = "btnAddStylist";
-            this.btnAddStylist.Size = new System.Drawing.Size(120, 40);
-            this.btnAddStylist.TabIndex = 1;
-            this.btnAddStylist.Text = "Új fodrász";
-            this.btnAddStylist.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(940, 500);
-            this.dataGridView1.TabIndex = 0;
+            this.btnAdd.Location = new System.Drawing.Point(285, 600);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(120, 40);
+            this.btnAdd.TabIndex = 1;
+            this.btnAdd.Text = "Hozzáadás";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // AdminMainForm
             // 
@@ -189,9 +192,9 @@
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.btnDeleteStylist);
             this.Controls.Add(this.panelContent);
-            this.Controls.Add(this.btnEditStylist);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.panelHeader_);
-            this.Controls.Add(this.btnAddStylist);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnStylists);
             this.Controls.Add(this.lblMenuTitle);
             this.Controls.Add(this.panelMenu);
@@ -204,7 +207,7 @@
             this.panelMenu.ResumeLayout(false);
             this.panelHeader_.ResumeLayout(false);
             this.panelContent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -221,8 +224,8 @@
         private System.Windows.Forms.Panel panelHeader_;
         private System.Windows.Forms.Panel panelContent;
         private System.Windows.Forms.Button btnDeleteStylist;
-        private System.Windows.Forms.Button btnEditStylist;
-        private System.Windows.Forms.Button btnAddStylist;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnEdit;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.DataGridView dgv;
     }
 }

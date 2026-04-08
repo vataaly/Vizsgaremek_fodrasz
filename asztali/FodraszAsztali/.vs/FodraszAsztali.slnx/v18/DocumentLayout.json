@@ -1,22 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\",
+  "WorkspaceRootPath": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobro\\onedrive\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobro\\onedrive\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\addstylistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:addstylistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobro\\onedrive\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\addstylistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:addstylistform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobro\\downloads\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|c:\\users\\dobro\\onedrive\\dokumentumok\\vizsgaremek_fodrasz\\asztali\\fodraszasztali\\adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:adminmainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C2F0EB45-26F1-41CC-8FB9-41308E8A6AF1}|FodraszAsztali.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,25 +37,54 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
+              "Title": "AddStylistForm.cs",
+              "DocumentMoniker": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AddStylistForm.cs",
+              "RelativeDocumentMoniker": "AddStylistForm.cs",
+              "ToolTip": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AddStylistForm.cs",
+              "RelativeToolTip": "AddStylistForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T17:41:10.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddStylistForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AddStylistForm.cs",
+              "RelativeDocumentMoniker": "AddStylistForm.cs",
+              "ToolTip": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AddStylistForm.cs [Design]",
+              "RelativeToolTip": "AddStylistForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-08T17:36:47.278Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "AdminMainForm.cs",
-              "DocumentMoniker": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
+              "DocumentMoniker": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
               "RelativeDocumentMoniker": "AdminMainForm.cs",
-              "ToolTip": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
+              "ToolTip": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
               "RelativeToolTip": "AdminMainForm.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAAAAAAAAIwGMAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T16:37:05.706Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "AdminMainForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
+              "DocumentMoniker": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs",
               "RelativeDocumentMoniker": "AdminMainForm.cs",
-              "ToolTip": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs [Design]",
+              "ToolTip": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\AdminMainForm.cs [Design]",
               "RelativeToolTip": "AdminMainForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-02T16:36:47.337Z",
@@ -55,28 +92,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T16:36:21.167Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2026-02-02T16:36:21.167Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\dobro\\OneDrive\\Dokumentumok\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
+              "ToolTip": "C:\\Users\\dobro\\Downloads\\Vizsgaremek_fodrasz\\asztali\\FodraszAsztali\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAxAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-02T16:37:00.138Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-02T16:37:00.138Z"
             }
           ]
         }
