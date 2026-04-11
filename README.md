@@ -88,6 +88,69 @@ Az importátálásra kell kattintani majd bemásolni a fájlt
 
 Majd a végén megint az importálásra kattintani az oldal alján
 
+Majd megnyitni a frontendben a terminálban látható localhostot.
+
+Aztán ha megnyilt ezt a felüleletet kell látni
+
+<img width="2516" height="1286" alt="image" src="https://github.com/user-attachments/assets/f6a83fea-413d-482c-af94-ba7a557eab60" />
+
+Akkor most jöjjön az útmutató
+
+
+
+Kezelési Útmutató: Fodrász Szalon Weboldal
+Ez a dokumentum a felhasználók és adminisztrátorok számára nyújt segítséget a weboldal funkcióinak használatához.
+
+1. Navigáció és Főoldal
+A weboldal fejlécében található menüpontok segítségével érhetők el a fő funkciók:
+
+Főoldal: Visszatérés a kezdőképernyőre.
+
+Foglalás: Itt választható ki a kívánt időpont és szakember.
+
+Bejelentkezés / Regisztráció: Saját fiók létrehozása a foglalások nyomon követéséhez.
+
+2. Időpontfoglalás menete
+Kattintson a főoldali "Időpontot foglalok" kék gombra vagy a menüben a Foglalás pontra.
+
+Válassza ki a Mesterfodrászaink közül a szimpatikus szakembert (pl. Kiss Anna, Nagy Péter).
+
+A Szolgáltatásaink listából válassza ki a kívánt kezelést (pl. Női hajvágás, Borotválás). Az árak és az időtartamok a lista mellett láthatóak.
+
+Válassza ki a szabad időpontot a naptárban, majd véglegesítse a foglalást.
+
+3. Regisztráció és Belépés
+A foglaláshoz szükséges egy érvényes felhasználói fiók.
+
+A regisztrációnál adja meg nevét, e-mail címét és egy jelszót.
+
+Bejelentkezés után a profiljában megtekintheti eddigi és jövőbeli időpontjait.
+
+4. Cookie-k (Sütik) elfogadása
+Az oldal alján megjelenő fekete sávban tájékozódhat a süti-használatról. A zavartalan böngészéshez kattintson az "Elfogadom" gombra.
+
+5. Felhasználói Fiók Kezelése
+Regisztráció és Belépés
+Regisztráció: Új felhasználóként az e-mail címed és egy választott jelszó megadásával hozhatsz létre fiókot.
+
+Bejelentkezés: A már regisztrált adatokkal tudsz belépni. Sikeres belépés után a fejlécben megjelenik az üdvözlő szöveg (pl. "Szia, felhasznalo@email.com").
+
+Profil és Kilépés: Bejelentkezett állapotban elérhetővé válik a Profil gomb (ahol a saját adataidat/foglalásaidat látod) és a piros Kilépés gomb a munkamenet lezárásához.
+
+6. Részletes Foglalási Folyamat
+Az Időpont foglalás kártyán az alábbi adatokat kell megadni:
+
+Választható szolgáltatás: Gördülő menüből válaszd ki a kezelést (pl. hajvágás, festés).
+
+Fodrász kiválasztása: Válaszd ki, melyik szakemberhez szeretnél menni.
+
+Dátum: A naptár ikonra kattintva jelöld ki a napot.
+
+Időpont (Kezdés): Állítsd be, hány órára érkeznél. A rendszer a szolgáltatás hossza alapján automatikusan kiszámítja a Vége (számított) időpontot.
+
+Véglegesítés: A kék gombra kattintva rögzítheted a foglalást.
+
+
 
 
 
