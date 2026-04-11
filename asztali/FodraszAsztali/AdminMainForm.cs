@@ -82,8 +82,11 @@ namespace FodraszAsztali
             }
             else if (lblHeader.Text == "Időpontok")
             {
-                // Ide jön majd az AddAppointmentForm() megnyitása
-                MessageBox.Show("Itt nyílik majd meg az időpont hozzáadása ablak.");
+                var form = new AddAppointmentForm();
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    btnAppointments_Click(null, null); // Lista újratöltése
+                }
             }
         }
 
@@ -99,14 +102,25 @@ namespace FodraszAsztali
             if (lblHeader.Text == "Fodrászok")
             {
                 var selected = dgv.SelectedRows[0].DataBoundItem as Stylist;
-                // Ide jön a fodrász módosító ablak megnyitása, átadva neki a kiválasztott adatot
-                MessageBox.Show($"Itt nyílik majd meg a szerkesztő ablak a következőhöz: {selected.name}");
+
+                // Megnyitjuk a szerkesztő formot, és átadjuk neki a kiválasztott fodrászt
+                var form = new EditStylistForm(selected);
+
+                // Ha a mentés sikeres volt (DialogResult.OK), frissítjük a táblázatot
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    btnStylists_Click(null, null); // Lista újratöltése
+                }
             }
             else if (lblHeader.Text == "Időpontok")
             {
                 var selected = dgv.SelectedRows[0].DataBoundItem as Appointment;
-                // Ide jön az időpont módosító ablak megnyitása
-                MessageBox.Show("Itt nyílik majd meg az időpont szerkesztése ablak.");
+                var form = new EditAppointmentForm(selected);
+
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+                    btnAppointments_Click(null, null); // Lista újratöltése
+                }
             }
         }
     }

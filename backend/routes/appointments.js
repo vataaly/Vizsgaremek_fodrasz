@@ -138,5 +138,32 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Szerver hiba történt" });
   }
 });
+/* ===== FOGLALÁS MÓDOSÍTÁSA (PUT) ===== */
+router.put("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { user_id, stylist_id, service_id, appointment_date, start_time, end_time } = req.body;
+
+    if (!user_id || !stylist_id || !service_id || !appointment_date || !start_time || !end_time) {
+      return res.status(400).json({ message: "Minden mező kötelező" });
+    }
+
+    const [result] = await db.query(
+      `UPDATE appointments 
+       SET user_id = ?, stylist_id = ?, service_id = ?, appointment_date = ?, start_time = ?, end_time = ? 
+       WHERE appointment_id = ?`,
+      [user_id, stylist_id, service_id, appointment_date, start_time, end_time, id]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "A foglalás nem található" });
+    }
+
+    res.json({ message: "Foglalás sikeresen módosítva" });
+  } catch (err) {
+    console.error("Hiba a módosításnál:", err);
+    res.status(500).json({ message: "Szerver hiba történt a módosítás során" });
+  }
+});
 
 export default router;
