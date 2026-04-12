@@ -247,13 +247,8 @@ Az alábbi ábra a fodrász szalon adatbázisának entitás–kapcsolat (ER) dia
 
 ## Elérhető végpontok
 
-| Művelet     | HTTP   | URL         |
-| ----------- | ------ | ----------- |
-| Összes adat | GET    | /users      |
-| Egy adat    | GET    | /users/{id} |
-| Új adat     | POST   | /users      |
-| Módosítás   | PUT    | /users/{id} |
-| Törlés      | DELETE | /users/{id} |
+<img width="3580" height="1380" alt="api_endpoints_table" src="https://github.com/user-attachments/assets/f47f7494-e144-40c1-a463-db7a32a730dc" />
+
 
 
 ## Normalizálás
