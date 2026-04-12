@@ -98,7 +98,7 @@ Akkor most jöjjön az útmutató
 
 
 
-Kezelési Útmutató: Fodrász Szalon Weboldal
+## Kezelési Útmutató: Fodrász Szalon Weboldal
 Ez a dokumentum a felhasználók és adminisztrátorok számára nyújt segítséget a weboldal funkcióinak használatához.
 
 1. Navigáció és Főoldal
@@ -149,6 +149,53 @@ Dátum: A naptár ikonra kattintva jelöld ki a napot.
 Időpont (Kezdés): Állítsd be, hány órára érkeznél. A rendszer a szolgáltatás hossza alapján automatikusan kiszámítja a Vége (számított) időpontot.
 
 Véglegesítés: A kék gombra kattintva rögzítheted a foglalást.
+
+
+## Asztali Alkalmazás
+
+1. Belépés a rendszerbe
+A szoftver indításakor egy biztonsági hitelesítő ablak fogadja a felhasználót. A hozzáférés csak érvényes adminisztrátori adatokkal lehetséges.
+
+Belépési felület: Letisztult, minimalista dizájn Email és Jelszó mezőkkel.
+
+Alapértelmezett adatok:
+
+Email: admin@szalon.hu
+
+Jelszó: admin
+
+2. Központi Adminisztrációs Felület
+Sikeres belépés után a fővezérlő ablak nyílik meg, amely két fő részre oszlik:
+
+Oldalsó navigációs sáv: Itt válthatunk a „Fodrászok” és „Időpontok” kezelése között. Itt található a hangsúlyos, piros Kijelentkezés gomb is a biztonságos kilépéshez.
+
+Adatterület: Itt jelennek meg a táblázatok és a műveleti gombok (Hozzáadás, Szerkesztés, Törlés).
+
+3. Funkcionális modulok
+3.1. Időpontok kezelése
+A rendszer legfontosabb része, ahol a foglalásokat követhetjük nyomon egy részletes táblázatban.
+
+Megjelenített adatok: Időpont azonosító, dátum, kezdés/vége, vendég neve, fodrász neve, valamint a szolgáltatás típusa és ára.
+
+Új időpont felvétele: Egy külön ablakban adható meg, ahol:
+
+Naptár választó segíti a pontos dátum megadását.
+
+Legördülő listákból választható ki a felhasználó, a fodrász és a szolgáltatás.
+
+Az Ár mezőben rögzíthető a szolgáltatás ellenértéke.
+
+3.2. Fodrászok nyilvántartása
+Ebben a modulban a szalon alkalmazottait kezelhetjük.
+
+Adatkezelés: Lehetőség van a fodrászok nevének, szakterületének (pl. festés, vágás), e-mail címének és telefonszámának rögzítésére vagy módosítására.
+
+4. Biztonság és Hibakezelés
+A programot felkészítettük a felhasználói tévedések elkerülésére:
+
+Szelekció figyelése: Ha kijelölés nélkül próbálunk módosítani egy elemet, a rendszer figyelmeztető üzenetet küld: "Kérlek válassz ki egy elemet a szerkesztéshez!"
+
+Adatintegritás: A legördülő menük biztosítják, hogy csak létező fodrászhoz vagy szolgáltatáshoz lehessen időpontot rendelni.
 
 
 
