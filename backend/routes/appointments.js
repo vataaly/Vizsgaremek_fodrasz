@@ -15,40 +15,48 @@ router.post("/", async (req, res) => {
       end_time,
     } = req.body;
 
-    /* Validálás */
+    /* 1. Alapvető mezők ellenőrzése */
     if (!user_id || !stylist_id || !service_id || !appointment_date || !start_time || !end_time) {
       return res.status(400).json({ message: "Minden mező kötelező" });
+    }
+
+    /* 2. Dátum és idő validálása (Ne lehessen múltbeli) */
+    const now = new Date();
+    const selectedDateTime = new Date(`${appointment_date}T${start_time}`);
+
+    if (selectedDateTime < now) {
+      return res.status(400).json({ message: "Nem foglalhatsz időpontot a múltba!" });
     }
 
     if (start_time >= end_time) {
       return res.status(400).json({ message: "A kezdési időnek kisebbnek kell lennie a végidőnél" });
     }
 
-    /* Ütközés ellenőrzés */
+    /* 3. Ütközés ellenőrzés (Fodrász beosztásának védelme) */
     const [conflicts] = await db.query(
       `
       SELECT * FROM appointments 
       WHERE stylist_id = ? 
         AND appointment_date = ? 
         AND (
-          (start_time < ? AND end_time > ?) OR 
-          (start_time < ? AND end_time > ?) OR 
-          (start_time >= ? AND end_time <= ?)
+          (start_time <= ? AND end_time > ?) OR 
+          (start_time < ? AND end_time >= ?) OR 
+          (? <= start_time AND ? >= end_time)
         )
       `,
-      [stylist_id, appointment_date, end_time, start_time, end_time, start_time, start_time, end_time]
+      [stylist_id, appointment_date, start_time, start_time, end_time, end_time, start_time, end_time]
     );
 
     if (conflicts.length > 0) {
       return res.status(409).json({ message: "Ez az időpont már foglalt ennél a fodrásznál" });
     }
 
-    /* Beszúrás */
+    /* 4. Beszúrás az adatbázisba */
     await db.query(
       `
       INSERT INTO appointments 
-      (appointment_id, user_id, stylist_id, service_id, appointment_date, start_time, end_time) 
-      VALUES (NULL, ?, ?, ?, ?, ?, ?)
+      (user_id, stylist_id, service_id, appointment_date, start_time, end_time) 
+      VALUES (?, ?, ?, ?, ?, ?)
       `,
       [user_id, stylist_id, service_id, appointment_date, start_time, end_time]
     );
@@ -138,7 +146,8 @@ router.get("/", async (req, res) => {
     res.status(500).json({ message: "Szerver hiba történt" });
   }
 });
-/* ===== FOGLALÁS MÓDOSÍTÁSA (PUT) ===== */
+
+/* ===== 5. FOGLALÁS MÓDOSÍTÁSA (PUT) ===== */
 router.put("/:id", async (req, res) => {
   try {
     const { id } = req.params;
@@ -146,6 +155,13 @@ router.put("/:id", async (req, res) => {
 
     if (!user_id || !stylist_id || !service_id || !appointment_date || !start_time || !end_time) {
       return res.status(400).json({ message: "Minden mező kötelező" });
+    }
+
+    // Itt is érdemes ellenőrizni, hogy ne módosíthassák múltbeli dátumra
+    const now = new Date();
+    const selectedDateTime = new Date(`${appointment_date}T${start_time}`);
+    if (selectedDateTime < now) {
+      return res.status(400).json({ message: "Múltbeli időpontra nem módosíthatod a foglalást!" });
     }
 
     const [result] = await db.query(
