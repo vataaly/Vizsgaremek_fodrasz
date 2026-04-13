@@ -8,7 +8,7 @@ export default function Booking() {
   const [user, setUser] = useState(null);
   const [stylists, setStylists] = useState([]);
   const [services, setServices] = useState([]);
-  const [occupiedSlots, setOccupiedSlots] = useState([]); // Már lefoglalt idők
+  const [occupiedSlots, setOccupiedSlots] = useState([]);
 
   const [formData, setFormData] = useState({
     stylistId: "",
@@ -42,32 +42,28 @@ export default function Booking() {
       .catch(() => setStatus({ type: "danger", message: "Hiba az adatok betöltésekor." }));
   }, [navigate]);
 
-  // --- Foglalt időpontok lekérése, ha változik a fodrász vagy a dátum ---
+  // --- JAVÍTOTT: Foglalt időpontok lekérése szűréssel ---
   useEffect(() => {
     if (formData.date && formData.stylistId) {
+      setOccupiedSlots([]); 
       fetch(`${API_BASE}/api/appointments?date=${formData.date}&stylistId=${formData.stylistId}`)
         .then(r => r.json())
-        .then(data => setOccupiedSlots(data)) // Feltételezzük, hogy a backend visszaadja a [ {start_time, end_time}, ... ] listát
+        .then(data => {
+          if (Array.isArray(data)) setOccupiedSlots(data);
+        })
         .catch(() => setOccupiedSlots([]));
     }
   }, [formData.date, formData.stylistId]);
 
-  // --- Dinamikus időpont generálás nyitvatartás szerint ---
   const getTimeOptions = () => {
     if (!formData.date) return [];
-    
     const selectedDate = new Date(formData.date);
-    const day = selectedDate.getDay(); // 0: Vasárnap, 6: Szombat
-
-    if (day === 0) return []; // Vasárnap zárva
+    const day = selectedDate.getDay();
+    if (day === 0) return []; 
 
     let startHour = 8;
     let endHour = 20;
-
-    if (day === 6) { // Szombat
-      startHour = 10;
-      endHour = 18;
-    }
+    if (day === 6) { startHour = 10; endHour = 18; }
 
     const options = [];
     for (let h = startHour; h < endHour; h++) {
@@ -78,10 +74,12 @@ export default function Booking() {
     return options;
   };
 
-  // Segédfüggvény: megmutatja, hogy egy adott időpont foglalt-e
+  // --- JAVÍTOTT: Időpont ütközés ellenőrzése ---
   const isSlotOccupied = (time) => {
     return occupiedSlots.some(slot => {
-      return time >= slot.start_time && time < slot.end_time;
+      const s = slot.start_time.substring(0, 5);
+      const e = slot.end_time.substring(0, 5);
+      return time >= s && time < e;
     });
   };
 
@@ -100,7 +98,6 @@ export default function Booking() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    // Vasárnap tiltása manuális választásnál is
     if (name === "date") {
       const day = new Date(value).getDay();
       if (day === 0) {
@@ -115,11 +112,6 @@ export default function Booking() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (isSlotOccupied(formData.startTime)) {
-      setStatus({ type: "danger", message: "Sajnáljuk, ezt az időpontot épp most foglalták le." });
-      return;
-    }
-    
     setLoading(true);
     try {
       const res = await fetch(`${API_BASE}/api/appointments`, {
@@ -134,7 +126,8 @@ export default function Booking() {
           end_time: formData.endTime,
         }),
       });
-      if (!res.ok) throw new Error("Hiba a foglalás során.");
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || "Hiba történt.");
       setStatus({ type: "success", message: "Sikeres foglalás!" });
       setFormData({ stylistId: "", serviceId: "", date: "", startTime: "", endTime: "" });
     } catch (err) {
@@ -145,58 +138,62 @@ export default function Booking() {
   };
 
   return (
-    <div className="container py-5">
-      <div className="card shadow border-0 p-4">
-        <h2 className="text-center mb-4">Időpont foglalás</h2>
-        {status.message && <div className={`alert alert-${status.type}`}>{status.message}</div>}
-        
-        <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label className="form-label">Szolgáltatás</label>
-            <select className="form-select" name="serviceId" value={formData.serviceId} onChange={handleChange} required>
-              <option value="">Válassz...</option>
-              {services.map(s => <option key={s.service_id} value={s.service_id}>{s.name} ({s.duration_minutes} perc)</option>)}
-            </select>
-          </div>
+    <div className="container py-4 py-md-5">
+      <div className="row justify-content-center">
+        <div className="col-12 col-md-10 col-lg-6">
+          <div className="card shadow-lg border-0 rounded-4 p-3 p-md-4">
+            <h2 className="text-center fw-bold mb-4">Időpont foglalás</h2>
+            {status.message && <div className={`alert alert-${status.type} border-0 shadow-sm`}>{status.message}</div>}
+            
+            <form onSubmit={handleSubmit}>
+              <div className="mb-3">
+                <label className="form-label fw-bold">Szolgáltatás</label>
+                <select className="form-select form-select-lg" name="serviceId" value={formData.serviceId} onChange={handleChange} required>
+                  <option value="">Válassz szolgáltatást...</option>
+                  {services.map(s => <option key={s.service_id} value={s.service_id}>{s.name} ({s.duration_minutes} perc)</option>)}
+                </select>
+              </div>
 
-          <div className="mb-3">
-            <label className="form-label">Fodrász</label>
-            <select className="form-select" name="stylistId" value={formData.stylistId} onChange={handleChange} required>
-              <option value="">Válassz...</option>
-              {stylists.map(st => <option key={st.stylist_id} value={st.stylist_id}>{st.name}</option>)}
-            </select>
-          </div>
+              <div className="mb-3">
+                <label className="form-label fw-bold">Fodrász</label>
+                <select className="form-select form-select-lg" name="stylistId" value={formData.stylistId} onChange={handleChange} required>
+                  <option value="">Kihez szeretnél jönni?</option>
+                  {stylists.map(st => <option key={st.stylist_id} value={st.stylist_id}>{st.name}</option>)}
+                </select>
+              </div>
 
-          <div className="mb-3">
-            <label className="form-label">Dátum</label>
-            <input type="date" className="form-control" name="date" min={today} value={formData.date} onChange={handleChange} required />
-          </div>
+              <div className="mb-3">
+                <label className="form-label fw-bold">Dátum</label>
+                <input type="date" className="form-control form-control-lg" name="date" min={today} value={formData.date} onChange={handleChange} required />
+              </div>
 
-          <div className="row">
-            <div className="col-6 mb-3">
-              <label className="form-label">Kezdés</label>
-              <select className="form-select" name="startTime" value={formData.startTime} onChange={handleChange} required disabled={!formData.date || !formData.stylistId}>
-                <option value="">Időpont...</option>
-                {getTimeOptions().map(time => {
-                  const occupied = isSlotOccupied(time);
-                  return (
-                    <option key={time} value={time} disabled={occupied} style={occupied ? { textDecoration: "line-through", color: "red" } : {}}>
-                      {time} {occupied ? " (FOGLALT)" : ""}
-                    </option>
-                  );
-                })}
-              </select>
-            </div>
-            <div className="col-6 mb-3">
-              <label className="form-label">Vége</label>
-              <input type="text" className="form-control bg-light" value={formData.endTime} readOnly placeholder="--:--" />
-            </div>
-          </div>
+              <div className="row g-3">
+                <div className="col-12 col-sm-6 mb-3">
+                  <label className="form-label fw-bold">Kezdés</label>
+                  <select className="form-select form-select-lg" name="startTime" value={formData.startTime} onChange={handleChange} required disabled={!formData.date || !formData.stylistId}>
+                    <option value="">Időpont...</option>
+                    {getTimeOptions().map(time => {
+                      const occupied = isSlotOccupied(time);
+                      return (
+                        <option key={time} value={time} disabled={occupied} style={occupied ? { color: "red", textDecoration: "line-through" } : {}}>
+                          {time} {occupied ? " (FOGLALT)" : ""}
+                        </option>
+                      );
+                    })}
+                  </select>
+                </div>
+                <div className="col-12 col-sm-6 mb-3">
+                  <label className="form-label fw-bold text-muted">Vége (becsült)</label>
+                  <input type="text" className="form-control form-control-lg bg-light" value={formData.endTime} readOnly placeholder="--:--" />
+                </div>
+              </div>
 
-          <button type="submit" className="btn btn-primary w-100 py-3" disabled={loading || !formData.startTime}>
-            {loading ? "Folyamatban..." : "Foglalás véglegesítése"}
-          </button>
-        </form>
+              <button type="submit" className="btn btn-primary btn-lg w-100 py-3 mt-3 shadow" disabled={loading || !formData.startTime}>
+                {loading ? <span className="spinner-border spinner-border-sm me-2"></span> : "Foglalás véglegesítése"}
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
   );
