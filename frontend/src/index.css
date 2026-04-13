@@ -8,10 +8,11 @@ html, body {
 }
 
 body {
-  background-color: #ffffff !important; /* Tiszta fehér háttér */
-  color: #212529 !important; /* Bootstrap alapértelmezett sötét szöveg */
+  background-color: #ffffff !important; 
+  color: #212529 !important; 
   display: block !important;
-  font-family: sans-serif; /* Alap betűtípus */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 /* 2. Szerkezeti rész a Footer letolásához */
@@ -38,10 +39,66 @@ footer {
   width: 100% !important;
 }
 
-/* 5. Bootstrap Container helyreállítása */
+/* 5. Bootstrap Container helyreállítása és reszponzivitás */
 .container {
   width: 100% !important;
   max-width: 1320px !important; 
   margin-right: auto !important;
   margin-left: auto !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+}
+
+/* --- ÚJ: RESZPONZÍV KIEGÉSZÍTÉSEK --- */
+
+/* Kártyák és űrlapok igazítása mobilon */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .card {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .card-body {
+    padding: 1.25rem !important; /* Kisebb belső margó mobilon */
+  }
+
+  /* A foglalási időpontok (Kezdés/Vége) egymás alá kerüljenek mobilon */
+  .row.g-3 > div, .row.g-2 > div {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Az inputok és gombok méretének finomítása mobilon */
+  .form-control-lg, .form-select-lg {
+    font-size: 1rem !important;
+    padding: 10px !important;
+  }
+
+  .btn-lg {
+    font-size: 1.1rem !important;
+    padding: 12px !important;
+  }
+}
+
+/* Hibaüzenetek (Alert) javítása */
+.alert {
+  word-wrap: break-word; /* Hosszú üzenet ne lógjon ki */
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* Segítség a képeken látható "kilógó" naptár és időválasztó ellen */
+input[type="date"], input[type="time"], select {
+  max-width: 100%;
+  box-sizing: border-box;
 }
